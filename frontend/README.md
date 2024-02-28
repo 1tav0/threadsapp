@@ -31,8 +31,6 @@ To run the application locally, follow these steps:
 7. Access the application in your web browser.
 
 # Project Structure
-graphql
-Copy code
 threads-app/
 ├── backend/            # Backend server built with Express
 │   ├── controllers/    # Controllers handling API requests
