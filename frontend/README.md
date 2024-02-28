@@ -8,10 +8,10 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 
-*********Threads App*******
+# Threads App
 - This project is a Threads application built with the latest version of Vite, incorporating Chakra UI for styling, JWT verification tokens for authentication, MongoDB as the database, and React and Express for frontend and backend, respectively.
 
-********Technologies Used********
+# Technologies Used
 - Vite: Latest version of Vite is used as the build tool for the project.
 - Chakra UI: Chakra UI is utilized for styling and creating a consistent user interface.
 - JWT Verification Tokens: JSON Web Tokens (JWT) are employed for user authentication and verification.
@@ -19,7 +19,7 @@ Currently, two official plugins are available:
 React: React is used to develop the frontend components and user interface.
 - Express: Express.js is utilized for building the backend server and handling API requests.
   
-**********Getting Started************
+# Getting Started
 To run the application locally, follow these steps:
 
 1. Clone the repository to your local machine.
@@ -30,9 +30,7 @@ To run the application locally, follow these steps:
 6. Start the frontend development server.
 7. Access the application in your web browser.
 
-************Project Structure**********
-graphql
-Copy code
+# Project Structure
 threads-app/
 ├── backend/            # Backend server built with Express
 │   ├── controllers/    # Controllers handling API requests
@@ -50,7 +48,7 @@ threads-app/
 └── README.md           # Project README file
 
 
-***********Usage******************
+# Usage
 To use the application, users can perform the following actions:
 
 - Register for a new account or log in with existing credentials.
