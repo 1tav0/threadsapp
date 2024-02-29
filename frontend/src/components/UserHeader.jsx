@@ -4,11 +4,17 @@ import { Link } from "react-router-dom"
 
 const UserHeader = () => {
   const toast = useToast();
-
+  
   const copyUrl = () => {
     const currentUrl = window.location.href;
     navigator.clipboard.writeText(currentUrl).then(() => {
-      toast({ description: "Copied"})
+      toast({
+        title: "Copied!",
+        status: "success",
+        description: "Profile link copied to clipboard.",
+        duration: 3000,
+        isClosable: true
+      })
     })
   }
 
@@ -37,14 +43,14 @@ const UserHeader = () => {
         <Box >
           <Avatar 
             name={"Boruto"}
-            src="/boruto1.jpg"
+            src="/boruto.jpg"
             size={"xl"}
           />
         </Box>
       </Flex>
-      <Box  w={"full"}>
+      <Text  w={"full"}>
         Co-founder, executive chairman and CEO of Meta Platforms.
-      </Box>
+      </Text>
       <Flex w={"full"} justifyContent={"space-between"}>
         <Flex alignItems={"center"} gap={2} color={"gray.light"}>
           <Text>3.2K followers</Text>
@@ -79,6 +85,24 @@ const UserHeader = () => {
               </Portal>
             </Menu>
           </Box>
+        </Flex>
+      </Flex>
+      <Flex w={"full"} justifyContent={"space-between"}>
+        <Flex flex={0.5} justifyContent={"center"} h={14} alignItems={"center"} borderBottom={"5px solid white"} cursor={"pointer"}>
+          <Text
+            color={"white"}
+            fontWeight={"bold"}
+          >
+            Threads
+          </Text>
+        </Flex>
+        <Flex flex={0.5} justifyContent={"center"} alignItems={"center"} borderBottom={"1.5px solid white"} cursor={"pointer"}>
+          <Text
+            color={"gray.light"}
+            fontWeight={"bold"}
+          >
+            Replies
+          </Text>
         </Flex>
       </Flex>
     </VStack>
