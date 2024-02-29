@@ -1,8 +1,14 @@
 import { Box, Flex, Text, VStack } from "@chakra-ui/layout"
-import { Avatar, Image } from "@chakra-ui/react"
+import { Avatar, Image, Menu, MenuButton, MenuItem, MenuList, Portal } from "@chakra-ui/react"
 import { Link } from "react-router-dom"
 
 const UserHeader = () => {
+
+  const copyUrl = () => {
+    const currentUrl = window.location.href;
+    console.log(window);
+  }
+
   return (
     <VStack>
       <Flex  w={"full"} justifyContent={"space-between"} >
@@ -42,17 +48,34 @@ const UserHeader = () => {
           <Box w="1" h="1" bg={"gray.light"} borderRadius={"full"}></Box>
           <Link >instagram.com</Link>
         </Flex>
-        <Flex gap={3} >
-          <Image
-            src="/instagram.svg"
-            h={5}
-            alt="instagram"
-          />
-          <Image
-            src="/more.svg"
-            h={5}
-            alt="more"
-          />
+        <Flex>
+          <Box className="icons__class" >
+            <Image
+              src="/instagram.svg"
+              h={5}
+              alt="instagram"
+            />
+          </Box>
+          <Box className="icons__class">
+            <Menu>
+              <MenuButton>
+                <Image
+                  src="/more.svg"
+                  h={5}
+                  alt="more"
+                />
+              </MenuButton>
+              <Portal>
+                <MenuList>
+                  <MenuItem
+                    onClick={copyUrl}
+                  >
+                    Copy link
+                  </MenuItem>
+                </MenuList>
+              </Portal>
+            </Menu>
+          </Box>
         </Flex>
       </Flex>
     </VStack>
