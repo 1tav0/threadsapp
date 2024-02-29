@@ -1,7 +1,11 @@
+import { Button } from "@chakra-ui/button";
+import { Container } from "@chakra-ui/layout";
 
 function App() {
   return (
-    <div>hello</div>
+    <Container maxW="620px">
+      <Button>Hello</Button>
+    </Container>
   )
 }
 
