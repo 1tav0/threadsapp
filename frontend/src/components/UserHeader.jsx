@@ -1,12 +1,15 @@
 import { Box, Flex, Text, VStack } from "@chakra-ui/layout"
-import { Avatar, Image, Menu, MenuButton, MenuItem, MenuList, Portal } from "@chakra-ui/react"
+import { Avatar, Image, Menu, MenuButton, MenuItem, MenuList, Portal, useToast } from "@chakra-ui/react"
 import { Link } from "react-router-dom"
 
 const UserHeader = () => {
+  const toast = useToast();
 
   const copyUrl = () => {
     const currentUrl = window.location.href;
-    console.log(window);
+    navigator.clipboard.writeText(currentUrl).then(() => {
+      toast({ description: "Copied"})
+    })
   }
 
   return (
