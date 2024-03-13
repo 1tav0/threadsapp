@@ -1,11 +1,12 @@
-import RepostSVG from "../svgs/RepostSVG";
-import ShareSVG from "../svgs/ShareSVG";
 import { Flex } from "@chakra-ui/react";
+import { BiRepost } from "react-icons/bi";
+import { IoMdShareAlt } from "react-icons/io";
 
-
-const Actions = ({ liked, setLiked }) => {
+const Actions = ({liked, setLiked}) => {
   return (
-			<Flex gap={3} my={2} onClick={(e) => e.preventDefault()}>
+		<Flex gap={3} my={2} onClick={(e) => e.preventDefault()}
+			alignItems={"center"}
+		>
 				<svg
 					aria-label='Like'
 					color={liked ? "rgb(237, 73, 86)" : ""}
@@ -41,10 +42,19 @@ const Actions = ({ liked, setLiked }) => {
 						strokeWidth='2'
 					></path>
 				</svg>
-
-      
-				<RepostSVG />
-				<ShareSVG />
+			
+			<BiRepost
+				style={{
+					height: "29px",
+					width: "29px"
+				}}
+			/>
+			<IoMdShareAlt
+				style={{
+					height: "29px",
+					width: "29px"
+				}}
+			/>
 			</ Flex>
 	);
 }

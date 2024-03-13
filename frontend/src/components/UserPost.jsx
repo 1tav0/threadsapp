@@ -1,19 +1,24 @@
 import { Avatar, Box, Flex, Image, Text } from "@chakra-ui/react"
 import { Link } from "react-router-dom"
 import { MdMoreHoriz } from "react-icons/md";
+import Actions from "./Actions";
+import { useState } from "react";
 
-const UserPost = () => {
+
+const UserPost = ({likes, replies, postImg, postTitle}) => {
+  const [liked, setLiked] = useState(false);
+
   return (
     <Link to={"/tavo/post/1"}>
-      <Flex bg={"red.500"} gap={3} mb={4} py={5} h={"500px"}>
+      <Flex gap={3} mb={4} py={5} h={"500px"}>
 
-        <Flex bg={"green.500"} flexDirection={"column"} alignItems={"center"}>
+        <Flex flexDirection={"column"} alignItems={"center"}>
           <Avatar
             src="/sasuke.jpg"
             alt={"avatarname"}
           />
           <Box w="1px" bg={"gray.light"} my={2} h={"full"}></Box>
-          <Box position={"relative"} bg={"green.500"} w={"full"}>
+          <Box position={"relative"} w={"full"}>
             <Avatar
               size={"xs"}
               name="tavo"
@@ -44,10 +49,10 @@ const UserPost = () => {
           </Box>
         </Flex>
 
-        <Flex bg={"purple.500"} flex={1} flexDirection={"column"} gap={2}>
-          <Flex bg={"pink.500"} w={"full"} justifyContent={"space-between"}>
+        <Flex flex={1} flexDirection={"column"} gap={2}>
+          <Flex w={"full"} justifyContent={"space-between"}>
             
-            <Flex w={"full"} bg={"blue.500"} alignItems={"center"}>
+            <Flex w={"full"} alignItems={"center"}>
               <Text fontSize={"sm"} fontWeight={"bold"}>
                 Tavo Cruz Ortega
               </Text>
@@ -65,17 +70,32 @@ const UserPost = () => {
             </Flex>
           </Flex>
 
-          <Text bg={"red.500"} fontSize={"sm"}>
-            This is my first post
+          <Text fontSize={"sm"}>
+            {postTitle}
           </Text>
-          <Box
-            border={"1px solid"}
-            borderColor={"gray.light"}
-            borderRadius={6}
-            overflow={"hidden"}
-          >
-            <Image src="/sasuke.jpg"/>
-          </Box>
+          {
+            postImg && (
+              <Box
+                border={"1px solid"}
+                borderColor={"gray.light"}
+                borderRadius={6}
+                overflow={"hidden"}
+              >
+                <Image src={postImg} w={"full"}/>
+              </Box>
+            )
+          }
+          
+          <Flex>
+            <Actions liked={liked} setLiked={setLiked} />
+          </Flex>
+
+          <Flex gap={2} alignItems={"center"}>
+            <Text color={"gray.light"} fontSize={"sm"}>{replies} replies</Text>
+            <Box w={1} h={1} borderRadius={"full"} bg={"gray.light"}></Box>
+            <Text fontSize={"sm"} color={"gray.light"}>{likes} likes</Text>
+          </Flex>
+
         </Flex>
       </Flex>
     </Link>
